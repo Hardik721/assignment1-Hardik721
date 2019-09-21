@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Books{
+
+    public static void main(String[] args) {
+        Scanner object=new Scanner(System.in);
+        Scanner object1=new Scanner(System.in);
+        int n=object.nextInt();
+        String[] books2= new String[n];
+        String[] books3=new String[n];
+        String[] books4=new String[n];
+        if(n==0){
+            System.out.println("N/A");
+        }
+        else {
+            for (int i = 0; i < n; i++) {
+                String bookName = object1.nextLine();
+                String authorName = object1.nextLine();
+                String iSBN=object1.nextLine();
+                books2[i] = new String(bookName);
+                books3[i]=new String(authorName);
+                books4[i]=new String(iSBN);
+            }
+        }
+        for (int j = 0; j < n; j++) {
+
+            System.out.println("---------------------------");
+            System.out.println("Book Name:   \t"+books2[j]);
+            System.out.println("Author Name:  \t"+books3[j]);
+            System.out.println("ISBN:  \t"+books4[j]);
+            System.out.println("----------------------------");
+        }
+
+    }
+
+}
+class Book01{
+    private String bookName;
+    private String authorName;
+    private int ISBN;
+
+    public String getBookName() {
+
+        return bookName;
+    }
+
+    public void setBookName(String bookName){
+
+        this.bookName=bookName;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public int getISBN() {
+
+        return ISBN;
+    }
+
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public Book01(String bookName,String authorName,int ISBN) {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.ISBN = ISBN;
+    }
+
+    @Override
+    public String toString(){
+
+        return String.format(getBookName(),getAuthorName());
+    }
+}
+
